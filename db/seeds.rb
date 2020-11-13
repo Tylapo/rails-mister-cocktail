@@ -21,7 +21,3 @@ Cocktail.create(name: "White Russian")
 Cocktail.create(name: "Sex on the Beach")
 Cocktail.create(name: "Mojito")
 
-Dose.create(description: "4.5 cl")
-Dose.create(description: "9 cl")
-Dose.create(description: "1.33 oz")
-Dose.create(description: "2 cl")
