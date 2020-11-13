@@ -1,28 +1,27 @@
 <div class="container">
   <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <img src="https://www.wallpapertip.com/wmimgs/50-505063_876244-title-food-cocktail-drink-ice-cube-smoke.jpg" />
     <div class="card-trip-infos">
       <div>
         <h2><%= @cocktail.name %></h2>
       </div>
     </div>
   </div>
-  <% @cocktail.doses.each do |dose| %>  
-    <li><%= dose.description %> <%= dose.ingredient.name %></li>
-    <%= link_to "Delete doses", cocktail_dose_path(@cocktail.id), method: :delete %>  
-  <% end %>
-  <%= link_to "Add doses", new_cocktail_dose_path(@cocktail) %> 
-  <hr>
-  <%= link_to "Back to cocktails", cocktails_path %> |
-</div>
-
-<div class="container">
-  <h2>Add doses</h2>
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <div><%= f.input :description %></div>
-    <div><%= f.association :ingredient %></div>
-    <div><%= f.submit %></div>
-  <% end %>
   <br>
-  <%= link_to 'Back to cocktails', cocktails_path %> |
+  <div class="container">
+    <% @cocktail.doses.each do |dose| %>  
+      <li><%= dose.description %> <%= dose.ingredient.name %></li>
+    <% end %>
+  </div>
+  <br>
+  <div class="container">
+    <h5>Add doses</h5>
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <div><%= f.input :description %></div>
+      <div><%= f.association :ingredient %></div>
+      <div><%= f.submit %></div>
+    <% end %>
+    <br>
+  
+  <%= link_to "Back to cocktails", cocktails_path %> |
 </div>
